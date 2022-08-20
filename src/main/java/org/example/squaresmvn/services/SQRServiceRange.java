@@ -4,13 +4,16 @@ public class SQRServiceRange {
 
     public long calcSqrt(long bottom, long top) {
 
-        for (long i = 10; i >= 99; i++) {
-            if (i * i >= bottom
-                    && i * i <= top) {
-                return i;
+        long count = 0;
+        for (long i = 10; i <= 99; i++) {
+            long sqr = i * i;
+            if (sqr >= bottom) {
+                if (sqr <= top) {
+                    count++;
+                }
             }
         }
-        return -1;
+        return count;
     }
 
 }
